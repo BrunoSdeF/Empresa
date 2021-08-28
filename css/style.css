@@ -1,0 +1,608 @@
+* {
+  margin: 0;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Do Hyeon", sans-serif;
+  font-family: "Oswald", sans-serif;
+  overflow: hidden;
+}
+
+header {
+  background: #ffde59;
+  height: 95px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 100;
+}
+
+header div {
+  width: 100px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header svg {
+  width: 100px;
+  height: auto;
+  fill: #323232;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+}
+
+header li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #323232;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/article1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+main div {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main h1 {
+  width: 67%;
+  height: auto;
+  font-size: calc(2.3em + 1vw);
+  color: #ffde59;
+  text-shadow: 1px 3px 15px black;
+}
+
+.step1 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 87vh;
+  padding: 30px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0px 0px 0px;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 3px 20px black;
+          box-shadow: 1px 3px 20px black;
+  z-index: -1;
+  font-family: "Baloo Tamma 2", cursive;
+}
+
+.step1 div:first-child {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 45%;
+  position: relative;
+}
+
+.step1 div:first-child h1 {
+  text-align: center;
+  font-weight: 500;
+  margin: 15px 0px;
+  color: #646464;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.step1 div:first-child h1::before {
+  content: "";
+  position: relative;
+  background-color: #646464;
+  height: 3px;
+  width: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px auto;
+}
+
+.step1 div:first-child h1::after {
+  content: "";
+  position: relative;
+  background-color: #646464;
+  height: 3px;
+  width: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px auto;
+}
+
+.step1 div:first-child p {
+  text-align: center;
+  font-size: calc(0.9em + 1vw);
+  color: #646464;
+}
+
+.step1 div:first-child p:last-child {
+  margin-top: 20px;
+}
+
+.step1 div:first-child p:last-child a {
+  text-decoration: none;
+  background-color: #ffde59;
+  color: #646464;
+  border-radius: 3px;
+  padding: 5px 20px;
+}
+
+@-webkit-keyframes mudar {
+  0% {
+    background-image: url(../img/main2.jpg);
+  }
+  32% {
+    background-image: url(../img/main2.jpg);
+  }
+  33% {
+    background-image: url(../img/main4.jpg);
+  }
+  65% {
+    background-image: url(../img/main4.jpg);
+  }
+  66% {
+    background-image: url(../img/article5.webp);
+  }
+  99% {
+    background-image: url(../img/article5.webp);
+  }
+  100% {
+    background-image: url(../img/main2.jpg);
+  }
+}
+
+@keyframes mudar {
+  0% {
+    background-image: url(../img/main2.jpg);
+  }
+  32% {
+    background-image: url(../img/main2.jpg);
+  }
+  33% {
+    background-image: url(../img/main4.jpg);
+  }
+  65% {
+    background-image: url(../img/main4.jpg);
+  }
+  66% {
+    background-image: url(../img/article5.webp);
+  }
+  99% {
+    background-image: url(../img/article5.webp);
+  }
+  100% {
+    background-image: url(../img/main2.jpg);
+  }
+}
+
+.step1 .slide {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../img/article1.jpg);
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-animation: mudar 15s ease infinite;
+          animation: mudar 15s ease infinite;
+}
+
+.step1 .slide a {
+  display: none;
+  font-size: 30px;
+}
+
+.step1 .slide:hover a {
+  text-decoration: none;
+  color: #ffde59;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.step2 {
+  width: 100vw;
+  height: 90vh;
+  background-image: url("../img/article2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.step2 .container {
+  width: 100vw;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.step2 .container div {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.step2 .container div h1 {
+  width: 50%;
+  height: auto;
+  font-size: calc(1.3em + 1vw);
+  color: #ffde59;
+  text-shadow: 1px 3px 15px black;
+}
+
+.step2 .container div ul {
+  width: 50%;
+  list-style: none;
+  font-size: calc(0.7em + 1vw);
+  color: #ffde59;
+}
+
+.step2 .container div li {
+  text-decoration: none;
+}
+
+.step3 {
+  width: 100%;
+  height: 87vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 50px;
+  -webkit-box-shadow: 1px 3px 20px black;
+          box-shadow: 1px 3px 20px black;
+  font-family: "Baloo Tamma 2", cursive;
+  color: #646464;
+}
+
+.step3 .container {
+  width: 50%;
+  height: 100%;
+}
+
+.step3 .container h1 {
+  font-size: calc(1em + 1vw);
+}
+
+.step3 .container p {
+  font-size: calc(0.5em + 1vw);
+}
+
+.step3 .container p i {
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+.step3 .container .form {
+  width: 60%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.step3 .container .form fieldset {
+  border: none;
+  position: relative;
+}
+
+.step3 .container .form legend {
+  font-size: 15px;
+  visibility: hidden;
+  position: relative;
+  top: 20px;
+  left: 17px;
+  color: white;
+  font-family: "Baloo Tamma 2", sans-serif;
+}
+
+.step3 .container .form legend span {
+  color: #ff002f;
+}
+
+.step3 .container .form input {
+  width: 100%;
+  height: 35px;
+  margin: 0px auto;
+  outline: none;
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.step3 .container .form input::-webkit-input-placeholder {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: 15px;
+}
+
+.step3 .container .form input:-ms-input-placeholder {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: 15px;
+}
+
+.step3 .container .form input::-ms-input-placeholder {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: 15px;
+}
+
+.step3 .container .form input::placeholder {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: 15px;
+}
+
+.step3 .container .form input:focus {
+  outline: none;
+  -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.step3 .container .form input:not(:focus) {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.step3 .container .form input:focus ~ legend {
+  color: rgba(0, 0, 0, 0.9);
+  visibility: visible;
+  top: 0px;
+  left: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.step3 .container .form input:focus::-webkit-input-placeholder {
+  visibility: hidden;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.step3 .container .form input:focus:-ms-input-placeholder {
+  visibility: hidden;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.step3 .container .form input:focus::-ms-input-placeholder {
+  visibility: hidden;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.step3 .container .form input:focus::placeholder {
+  visibility: hidden;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.step3 .container .form input:valid {
+  border-bottom: 1px solid rgba(0, 255, 0, 0.5);
+  -webkit-box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
+          box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
+}
+
+.step3 .container .form input:valid ~ legend {
+  color: rgba(0, 255, 0, 0.9);
+  visibility: visible;
+  top: 0px;
+  left: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.step3 .container .form input:valid ~ legend span {
+  color: rgba(0, 255, 0, 0.9);
+}
+
+.step3 .container .form input:focus:valid {
+  -webkit-box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
+          box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
+}
+
+.step3 .container .form input:not(:placeholder-shown):invalid {
+  border-bottom: 1px solid rgba(255, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
+          box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
+}
+
+.step3 .container .form input:focus:valid ~ legend {
+  color: rgba(0, 255, 0, 0.7);
+}
+
+.step3 .container .form input:not(:placeholder-shown):invalid ~ legend {
+  color: rgba(255, 0, 0, 0.9);
+  visibility: visible;
+  top: 0px;
+  left: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.step3 .container .form input:focus:not(:placeholder-shown):invalid {
+  -webkit-box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
+          box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
+}
+
+.step3 .container .form input:focus:not(:placeholder-shown):invalid ~ legend {
+  color: rgba(255, 0, 0, 0.9);
+}
+
+.step3 .container .form textarea {
+  width: 100%;
+  height: 100px;
+  margin: 25px auto 0px;
+  outline: none;
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 10px;
+  padding-left: 10px;
+  font-size: 15px;
+  resize: none;
+}
+
+.step3 .container .form textarea::-webkit-input-placeholder {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: 15px;
+}
+
+.step3 .container .form textarea:-ms-input-placeholder {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: 15px;
+}
+
+.step3 .container .form textarea::-ms-input-placeholder {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: 15px;
+}
+
+.step3 .container .form textarea::placeholder {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: 15px;
+}
+
+.step3 .container .form textarea:focus {
+  outline: none;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  border: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.step3 .container .form textarea:not(:focus) {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.step3 .container .form input[type="submit"] {
+  width: 40%;
+  background-color: #ffde59;
+  color: #646464;
+  border: none;
+  -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+}
+/*# sourceMappingURL=style.css.map */
