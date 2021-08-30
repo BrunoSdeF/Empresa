@@ -4,7 +4,7 @@
   font-weight: 400;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/baloo2/v2/wXKrE3kTposypRyd51jcAA.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+000 #000d;
 }
 
 @font-face {
@@ -17,8 +17,12 @@
 }
 
 * {
-  margin: 0;
+  margin: 0px;
+  border: none;
   padding: 0px;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -29,14 +33,12 @@ html {
 }
 
 body {
-  font-family: "Do Hyeon", sans-serif;
-  font-family: "Oswald", sans-serif;
   overflow: hidden;
 }
 
 header {
   width: 100vw;
-  height: 80px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,6 +53,7 @@ header {
       -ms-flex-direction: row;
           flex-direction: row;
   position: fixed;
+  z-index: 1000;
 }
 
 header .container {
@@ -72,8 +75,8 @@ header .container {
 }
 
 header .container figure {
-  width: 100px;
-  height: 100%;
+  width: 150px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,15 +93,20 @@ header .container figure {
 }
 
 header .container figure img {
-  width: 100px;
-  height: 80px;
+  width: 110px;
+  height: 100px;
   position: absolute;
   top: 0px;
 }
 
+nav {
+  z-index: 1500;
+  position: absolute;
+}
+
 nav ul {
-  width: auto;
-  height: 100vh;
+  width: 20px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,12 +122,12 @@ nav ul {
           flex-direction: column;
   position: fixed;
   right: 25px;
-  top: 0%;
+  top: 45%;
 }
 
 nav ul li {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,16 +141,53 @@ nav ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #ffde59cc;
+  background-color: #a58400cc;
   margin: 5px 0px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 nav ul li span {
   width: 60%;
   height: 60%;
-  background-color: #000;
   border-radius: 50%;
+  color: transparent;
+}
+
+.arrow {
+  width: 70px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  background-color: rgba(30, 30, 30, 0.3);
+  color: #f2a823;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.arrow span {
+  display: block;
+  padding-bottom: 5px;
+  font-size: 50px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 main {
@@ -167,6 +212,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  position: relative;
 }
 
 main .container {
@@ -185,25 +231,21 @@ main .container {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  cursor: default;
 }
 
 main .container h1 {
   width: 80%;
   height: auto;
   font-family: "poppins";
-  font-size: calc(1.3rem + 1vw);
-  color: #ffde59;
+  font-size: calc(1.1rem + 1vw);
+  color: #f2a823;
   letter-spacing: 1px;
   text-shadow: 1px 3px 15px black;
 }
 
 main .container h1 span {
   display: block;
-}
-
-aside {
-  width: 200vw;
-  height: 200vh;
 }
 
 .step1 {
@@ -222,6 +264,7 @@ aside {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  position: relative;
 }
 
 .step1 .container {
@@ -313,12 +356,13 @@ aside {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9))), url("../imagens/main2.jpg");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url("../imagens/main2.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9))), url("/img/main2.webp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url("/img/main2.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  position: relative;
 }
 
 .step2 .container {
@@ -361,13 +405,13 @@ aside {
   width: 90%;
   height: auto;
   font-size: calc(1.1em + 1vw);
-  color: #ffde59;
+  color: #f2a823;
 }
 
 .step2 .container div h1 span {
   width: auto;
   height: auto;
-  border-bottom: 1px solid #ffde59;
+  border-bottom: 1px solid #f2a823;
 }
 
 .step2 .container div ul {
@@ -375,7 +419,7 @@ aside {
   height: auto;
   list-style: none;
   font-size: calc(0.7em + 1vw);
-  color: #ffde59;
+  color: #f2a823;
   margin-top: 10px;
 }
 
@@ -385,121 +429,151 @@ aside {
 }
 
 .step3 {
-  width: 100%;
-  height: 87vh;
+  width: 100vw;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding: 50px;
-  -webkit-box-shadow: 1px 3px 20px black;
-          box-shadow: 1px 3px 20px black;
-  font-family: "Baloo Tamma 2", cursive;
-  color: #646464;
-}
-
-.step3 .container {
-  width: 50%;
-  height: 100%;
-}
-
-.step3 .container h1 {
-  font-size: calc(1em + 1vw);
-}
-
-.step3 .container p {
-  font-size: calc(0.5em + 1vw);
-}
-
-.step3 .container p i {
-  font-size: 25px;
-  margin-right: 5px;
-}
-
-.step3 .container .form {
-  width: 60%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background-color: #eee;
+}
+
+.step3 .container {
+  width: 70vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.step3 .container div {
+  width: 350px;
+  height: auto;
+  overflow: hidden;
+  font-family: "baloo 2";
+}
+
+.step3 .container div h1 {
+  font-size: calc(1em + 1vw);
+  font-weight: 600;
+}
+
+.step3 .container div p {
+  font-size: calc(0.5em + 1vw);
+}
+
+.step3 .container div p a {
+  color: #000;
+}
+
+.step3 .container div .form {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.step3 .container .form fieldset {
+.step3 .container div .form fieldset {
   border: none;
   position: relative;
 }
 
-.step3 .container .form legend {
+.step3 .container div .form legend {
   font-size: 15px;
   visibility: hidden;
   position: relative;
   top: 20px;
   left: 17px;
-  color: white;
-  font-family: "Baloo Tamma 2", sans-serif;
+  color: #000;
+  font-family: "baloo 2";
 }
 
-.step3 .container .form legend span {
+.step3 .container div .form legend span {
   color: #ff002f;
 }
 
-.step3 .container .form input {
+.step3 .container div .form input {
   width: 100%;
   height: 35px;
-  margin: 0px auto;
+  margin: 5px auto;
   outline: none;
-  border: 1px rgba(0, 0, 0, 0.2) solid;
-  border-radius: 10px;
+  border: 1px rgba(0, 0, 0, 0.4) solid;
+  border-radius: 3px;
   padding-left: 10px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.step3 .container .form input::-webkit-input-placeholder {
-  font-family: "Baloo Tamma 2", cursive;
-  font-size: 15px;
+.step3 .container div .form input::-webkit-input-placeholder {
+  font-family: "baloo 2";
+  font-size: 1rem;
+  color: #000;
 }
 
-.step3 .container .form input:-ms-input-placeholder {
-  font-family: "Baloo Tamma 2", cursive;
-  font-size: 15px;
+.step3 .container div .form input:-ms-input-placeholder {
+  font-family: "baloo 2";
+  font-size: 1rem;
+  color: #000;
 }
 
-.step3 .container .form input::-ms-input-placeholder {
-  font-family: "Baloo Tamma 2", cursive;
-  font-size: 15px;
+.step3 .container div .form input::-ms-input-placeholder {
+  font-family: "baloo 2";
+  font-size: 1rem;
+  color: #000;
 }
 
-.step3 .container .form input::placeholder {
-  font-family: "Baloo Tamma 2", cursive;
-  font-size: 15px;
+.step3 .container div .form input::placeholder {
+  font-family: "baloo 2";
+  font-size: 1rem;
+  color: #000;
 }
 
-.step3 .container .form input:focus {
+.step3 .container div .form input:focus {
   outline: none;
-  -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
-.step3 .container .form input:not(:focus) {
+.step3 .container div .form input:not(:focus) {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
-.step3 .container .form input:focus ~ legend {
-  color: rgba(0, 0, 0, 0.9);
+.step3 .container div .form input:focus ~ legend {
+  color: #000;
   visibility: visible;
   top: 0px;
   left: 5px;
@@ -507,37 +581,37 @@ aside {
   transition: 0.5s;
 }
 
-.step3 .container .form input:focus::-webkit-input-placeholder {
+.step3 .container div .form input:focus::-webkit-input-placeholder {
   visibility: hidden;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.step3 .container .form input:focus:-ms-input-placeholder {
+.step3 .container div .form input:focus:-ms-input-placeholder {
   visibility: hidden;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.step3 .container .form input:focus::-ms-input-placeholder {
+.step3 .container div .form input:focus::-ms-input-placeholder {
   visibility: hidden;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.step3 .container .form input:focus::placeholder {
+.step3 .container div .form input:focus::placeholder {
   visibility: hidden;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.step3 .container .form input:valid {
+.step3 .container div .form input:valid {
   border-bottom: 1px solid rgba(0, 255, 0, 0.5);
   -webkit-box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
           box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
 }
 
-.step3 .container .form input:valid ~ legend {
+.step3 .container div .form input:valid ~ legend {
   color: rgba(0, 255, 0, 0.9);
   visibility: visible;
   top: 0px;
@@ -546,26 +620,26 @@ aside {
   transition: 0.5s;
 }
 
-.step3 .container .form input:valid ~ legend span {
+.step3 .container div .form input:valid ~ legend span {
   color: rgba(0, 255, 0, 0.9);
 }
 
-.step3 .container .form input:focus:valid {
+.step3 .container div .form input:focus:valid {
   -webkit-box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
           box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
 }
 
-.step3 .container .form input:not(:placeholder-shown):invalid {
+.step3 .container div .form input:not(:placeholder-shown):invalid {
   border-bottom: 1px solid rgba(255, 0, 0, 0.5);
   -webkit-box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
           box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
 }
 
-.step3 .container .form input:focus:valid ~ legend {
+.step3 .container div .form input:focus:valid ~ legend {
   color: rgba(0, 255, 0, 0.7);
 }
 
-.step3 .container .form input:not(:placeholder-shown):invalid ~ legend {
+.step3 .container div .form input:not(:placeholder-shown):invalid ~ legend {
   color: rgba(255, 0, 0, 0.9);
   visibility: visible;
   top: 0px;
@@ -574,67 +648,81 @@ aside {
   transition: 0.5s;
 }
 
-.step3 .container .form input:focus:not(:placeholder-shown):invalid {
+.step3 .container div .form input:focus:not(:placeholder-shown):invalid {
   -webkit-box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
           box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
 }
 
-.step3 .container .form input:focus:not(:placeholder-shown):invalid ~ legend {
+.step3 .container div .form input:focus:not(:placeholder-shown):invalid ~ legend {
   color: rgba(255, 0, 0, 0.9);
 }
 
-.step3 .container .form textarea {
-  width: 100%;
+.step3 .container div .form textarea {
+  width: 99%;
   height: 100px;
-  margin: 25px auto 0px;
+  margin: 15px auto 0px;
   outline: none;
-  border: 1px rgba(0, 0, 0, 0.2) solid;
-  border-radius: 10px;
+  border: 1px rgba(0, 0, 0, 0.4) solid;
+  border-radius: 3px;
   padding-left: 10px;
-  font-size: 15px;
+  padding-top: 5px;
+  font-size: 1rem;
+  font-family: "baloo 2";
+  background-color: rgba(0, 0, 0, 0);
   resize: none;
 }
 
-.step3 .container .form textarea::-webkit-input-placeholder {
-  font-family: "Baloo Tamma 2", cursive;
-  font-size: 15px;
+.step3 .container div .form textarea::-webkit-input-placeholder {
+  font-family: "baloo 2";
+  font-size: 1rem;
+  color: #000;
 }
 
-.step3 .container .form textarea:-ms-input-placeholder {
-  font-family: "Baloo Tamma 2", cursive;
-  font-size: 15px;
+.step3 .container div .form textarea:-ms-input-placeholder {
+  font-family: "baloo 2";
+  font-size: 1rem;
+  color: #000;
 }
 
-.step3 .container .form textarea::-ms-input-placeholder {
-  font-family: "Baloo Tamma 2", cursive;
-  font-size: 15px;
+.step3 .container div .form textarea::-ms-input-placeholder {
+  font-family: "baloo 2";
+  font-size: 1rem;
+  color: #000;
 }
 
-.step3 .container .form textarea::placeholder {
-  font-family: "Baloo Tamma 2", cursive;
-  font-size: 15px;
+.step3 .container div .form textarea::placeholder {
+  font-family: "baloo 2";
+  font-size: 1rem;
+  color: #000;
 }
 
-.step3 .container .form textarea:focus {
+.step3 .container div .form textarea:focus {
+  border: 1px solid;
   outline: none;
-  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  border: none;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
-.step3 .container .form textarea:not(:focus) {
+.step3 .container div .form textarea:not(:focus) {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
-.step3 .container .form input[type="submit"] {
-  width: 40%;
-  background-color: #ffde59;
-  color: #646464;
+.step3 .container div .form input[type="submit"] {
+  width: 100%;
+  background-color: #00ffa1;
+  color: #000;
   border: none;
   -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+  font-family: "baloo 2";
+  font-size: 1.2rem;
+}
+
+footer {
+  width: 100vw;
+  height: 100vh;
 }
 /*# sourceMappingURL=style.css.map */

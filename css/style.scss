@@ -5,7 +5,7 @@
     font-weight: 400;
     font-display: swap;
     src: url(https://fonts.gstatic.com/s/baloo2/v2/wXKrE3kTposypRyd51jcAA.woff2) format("woff2");
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+000 #000d;
 }
 
 @font-face {
@@ -17,32 +17,30 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-$yellow: #ffde59;
-$yellow2: rgba(255, 222, 89, 0.1);
-$black: #000000;
-$grey: rgba(50, 50, 50, 1);
-$gray: rgba(100, 100, 100, 1);
+// $yellow: #ffde59;
+$yellow: #f2a823;
 $blue: #00cdff;
 $green: #00ffa1;
 $red: #ff002f;
-$bgcolor1: #d2af02;
-$bgcolor2: #eac74c;
-$border: rgba(0, 0, 0, 0.2);
-//font-size: clamp(1em, 1em + 1vw, 1.5em);
 * {
-    margin: 0;
+    margin: 0px;
+    border: none;
     padding: 0px;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    //  ::-webkit-scrollbar {
+    //     width: 0px;
+    // }
 }
 
 body {
-    font-family: "Do Hyeon", sans-serif;
-    font-family: "Oswald", sans-serif;
     overflow: hidden;
 }
 
@@ -51,25 +49,32 @@ body {
     height: $height;
 }
 
-@mixin displa-flex($direction, $content, $align) {
+@mixin display-flex($direction, $content, $align) {
     display: flex;
     align-items: $align;
     justify-content: $content;
     flex-direction: $direction;
 }
 
+@mixin color($bgcolor, $color, $border) {
+    background-color: $bgcolor;
+    color: $color;
+    border: $border;
+}
+
 header {
-    @include size(100vw, 80px);
-    @include displa-flex(row, center, center);
+    @include size(100vw, 100px);
+    @include display-flex(row, center, center);
     position: fixed;
+    z-index: 1000;
     .container {
         @include size(70vw, 100%);
-        @include displa-flex(row, flex-start, center);
+        @include display-flex(row, flex-start, center);
         figure {
-            @include size(100px, 100%);
-            @include displa-flex(row, center, center);
+            @include size(150px, 100px);
+            @include display-flex(row, center, center);
             img {
-                @include size(100px, 80px);
+                @include size(110px, 100px);
                 position: absolute;
                 top: 0px;
             }
@@ -78,71 +83,93 @@ header {
 }
 
 nav {
+    z-index: 1500;
+    position: absolute;
     ul {
-        @include size(auto, 100vh);
-        @include displa-flex(column, center, center);
+        @include size(20px, 100px);
+        @include display-flex(column, center, center);
         position: fixed;
         right: 25px;
-        top: 0%;
+        top: 45%;
+        // cursor: pointer;
         li {
-            @include size(15px, 15px);
-            @include displa-flex(row, center, center);
-            background-color: #ffde59cc;
+            @include size(10px, 10px);
+            @include display-flex(row, center, center);
+            background-color: #a58400cc;
             margin: 5px 0px;
             border-radius: 50%;
+            cursor: pointer;
             span {
                 @include size(60%, 60%);
-                background-color: #000;
                 border-radius: 50%;
+                color: transparent;
             }
         }
+    }
+}
+
+.arrow {
+    @include size(70px, 70px);
+    @include display-flex(column, center, center);
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    @include color(rgba(30, 30, 30, 0.3), $yellow, null);
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    span {
+        display: block;
+        padding-bottom: 5px;
+        font-size: 50px;
+        transform: rotate(90deg);
     }
 }
 
 main {
     @include size(100vw, 100vh);
-    @include displa-flex(row, center, center);
+    @include display-flex(row, center, center);
     background-image: linear-gradient(rgba(0, 0, 0, 0.85)), url("../img/article1.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    position: relative;
     .container {
         @include size(70vw,
         100%);
-        @include displa-flex(row,
+        @include display-flex(row,
         flex-start,
         center);
+        cursor: default;
         h1 {
             @include size(80%,
             auto);
             font-family: "poppins";
-            font-size: calc(1.3rem + 1vw);
+            font-size: calc(1.1rem + 1vw);
             color: $yellow;
             letter-spacing: 1px;
             text-shadow: 1px 3px 15px rgba(0, 0, 0, 1);
             span {
-                display: block
+                display: block;
             }
         }
     }
 }
 
-aside {
-    @include size (200vw,
-    200vh);
-}
-
 .step1 {
     @include size(100vw,
     100vh);
-    @include displa-flex(row,
+    @include display-flex(row,
     center,
     center);
+    position: relative;
     .container {
         @include size(70vw,
         100vh);
-        @include displa-flex(column,
+        @include display-flex(column,
         center,
         center);
         font-family: "poppins";
@@ -175,7 +202,7 @@ aside {
             margin: 0px auto;
         }
         p {
-            @include displa-flex(column,
+            @include display-flex(column,
             center,
             center);
             text-align: center;
@@ -188,24 +215,25 @@ aside {
 .step2 {
     @include size(100vw,
     100vh);
-    @include displa-flex(column,
+    @include display-flex(column,
     center,
     center);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url("../imagens/main2.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url("/img/main2.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    position: relative;
     .container {
         @include size(70vw,
         100vh);
-        @include displa-flex(row,
+        @include display-flex(row,
         space-around,
         center);
         div {
             @include size(100%,
             100%);
-            @include displa-flex(column,
+            @include display-flex(column,
             center,
             center);
             font-family: "poppins";
@@ -237,150 +265,171 @@ aside {
 }
 
 .step3 {
-    width: 100%;
-    height: 87vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 50px;
-    box-shadow: 1px 3px 20px black;
-    font-family: "Baloo Tamma 2", cursive;
-    color: $gray;
+    @include size(100vw,
+    100vh);
+    @include display-flex(column,
+    center,
+    center);
+    position: relative;
+    overflow: hidden;
+    background-color: #eee;
     .container {
-        width: 50%;
-        height: 100%;
-        h1 {
-            font-size: calc(1em + 1vw);
-        }
-        p {
-            font-size: calc(0.5em + 1vw);
-            i {
-                font-size: 25px;
-                margin-right: 5px;
+        @include size(70vw,
+        100vh);
+        @include display-flex(row,
+        flex-start,
+        center);
+        div {
+            @include size(350px,
+            auto);
+            overflow: hidden;
+            font-family: "baloo 2";
+            h1 {
+                font-size: calc(1em + 1vw);
+                font-weight: 600;
             }
-        }
-        .form {
-            width: 60%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            fieldset {
-                border: none;
-                position: relative;
-            }
-            legend {
-                font-size: 15px;
-                visibility: hidden;
-                position: relative;
-                top: 20px;
-                left: 17px;
-                color: white;
-                font-family: "Baloo Tamma 2", sans-serif;
-                span {
-                    color: $red;
+            p {
+                font-size: calc(0.5em + 1vw);
+                a {
+                    color: #000;
                 }
             }
-            input {
-                width: 100%;
-                height: 35px;
-                margin: 0px auto;
-                outline: none;
-                border: 1px $border solid;
-                border-radius: 10px;
-                padding-left: 10px;
-                &::placeholder {
-                    font-family: "Baloo Tamma 2", cursive;
+            .form {
+                @include size(100%,
+                100%);
+                @include display-flex(column,
+                center,
+                center);
+                fieldset {
+                    border: none;
+                    position: relative;
+                }
+                legend {
                     font-size: 15px;
-                }
-                &:focus {
-                    outline: none;
-                    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
-                    transition: 0.4s;
-                }
-                &:not(:focus) {
-                    transition: 0.4s;
-                }
-                &:focus~legend {
-                    color: rgba(0, 0, 0, 0.9);
-                    visibility: visible;
-                    top: 0px;
-                    left: 5px;
-                    transition: 0.5s;
-                }
-                &:focus::placeholder {
                     visibility: hidden;
-                    transition: 0.1s;
-                }
-                &:valid {
-                    border-bottom: 1px solid rgba(0, 255, 0, 0.5);
-                    box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
-                }
-                &:valid~legend {
-                    color: rgba(0, 255, 0, 0.9);
-                    visibility: visible;
-                    top: 0px;
-                    left: 5px;
-                    transition: 0.5s;
+                    position: relative;
+                    top: 20px;
+                    left: 17px;
+                    color: #000;
+                    font-family: "baloo 2";
                     span {
-                        color: rgba(0, 255, 0, 0.9);
+                        color: $red;
                     }
                 }
-                &:focus:valid {
-                    box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
-                }
-                &:not(:placeholder-shown):invalid {
-                    border-bottom: 1px solid rgba(255, 0, 0, 0.5);
-                    box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
-                }
-                &:focus:valid~legend {
-                    color: rgba(0, 255, 0, 0.7);
-                }
-                &:not(:placeholder-shown):invalid~legend {
-                    color: rgba(255, 0, 0, 0.9);
-                    visibility: visible;
-                    top: 0px;
-                    left: 5px;
-                    transition: 0.5s;
-                }
-                &:focus:not(:placeholder-shown):invalid {
-                    box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
-                }
-                &:focus:not(:placeholder-shown):invalid~legend {
-                    color: rgba(255, 0, 0, 0.9);
-                }
-            }
-            textarea {
-                width: 100%;
-                height: 100px;
-                margin: 25px auto 0px;
-                outline: none;
-                border: 1px $border solid;
-                border-radius: 10px;
-                padding-left: 10px;
-                font-size: 15px;
-                resize: none;
-                &::placeholder {
-                    font-family: "Baloo Tamma 2", cursive;
-                    font-size: 15px;
-                }
-                &:focus {
+                input {
+                    width: 100%;
+                    height: 35px;
+                    margin: 5px auto;
                     outline: none;
-                    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+                    border: 1px rgba(0, 0, 0, 0.4) solid;
+                    border-radius: 3px;
+                    padding-left: 10px;
+                    background-color: rgba(0, 0, 0, 0);
+                    &::placeholder {
+                        font-family: "baloo 2";
+                        font-size: 1rem;
+                        color: #000;
+                    }
+                    &:focus {
+                        outline: none;
+                        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+                        transition: 0.4s;
+                    }
+                    &:not(:focus) {
+                        transition: 0.4s;
+                    }
+                    &:focus~legend {
+                        color: #000;
+                        visibility: visible;
+                        top: 0px;
+                        left: 5px;
+                        transition: 0.5s;
+                    }
+                    &:focus::placeholder {
+                        visibility: hidden;
+                        transition: 0.1s;
+                    }
+                    &:valid {
+                        border-bottom: 1px solid rgba(0, 255, 0, 0.5);
+                        box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
+                    }
+                    &:valid~legend {
+                        color: rgba(0, 255, 0, 0.9);
+                        visibility: visible;
+                        top: 0px;
+                        left: 5px;
+                        transition: 0.5s;
+                        span {
+                            color: rgba(0, 255, 0, 0.9);
+                        }
+                    }
+                    &:focus:valid {
+                        box-shadow: 1px 3px 5px rgba(0, 255, 0, 0.5);
+                    }
+                    &:not(:placeholder-shown):invalid {
+                        border-bottom: 1px solid rgba(255, 0, 0, 0.5);
+                        box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
+                    }
+                    &:focus:valid~legend {
+                        color: rgba(0, 255, 0, 0.7);
+                    }
+                    &:not(:placeholder-shown):invalid~legend {
+                        color: rgba(255, 0, 0, 0.9);
+                        visibility: visible;
+                        top: 0px;
+                        left: 5px;
+                        transition: 0.5s;
+                    }
+                    &:focus:not(:placeholder-shown):invalid {
+                        box-shadow: 1px 3px 5px rgba(255, 0, 0, 0.5);
+                    }
+                    &:focus:not(:placeholder-shown):invalid~legend {
+                        color: rgba(255, 0, 0, 0.9);
+                    }
+                }
+                textarea {
+                    width: 99%;
+                    height: 100px;
+                    margin: 15px auto 0px;
+                    outline: none;
+                    border: 1px rgba(0, 0, 0, 0.4) solid;
+                    border-radius: 3px;
+                    padding-left: 10px;
+                    padding-top: 5px;
+                    font-size: 1rem;
+                    font-family: "baloo 2";
+                    background-color: rgba(0, 0, 0, 0);
+                    resize: none;
+                    &::placeholder {
+                        font-family: "baloo 2";
+                        font-size: 1rem;
+                        color: #000;
+                    }
+                    &:focus {
+                        border: 1px solid;
+                        outline: none;
+                        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+                        transition: 0.4s;
+                    }
+                    &:not(:focus) {
+                        transition: 0.4s;
+                    }
+                }
+                input[type="submit"] {
+                    width: 100%;
+                    background-color: $green;
+                    color: #000;
                     border: none;
-                    transition: 0.4s;
+                    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+                    font-family: "baloo 2";
+                    font-size: 1.2rem;
                 }
-                &:not(:focus) {
-                    transition: 0.4s;
-                }
-            }
-            input[type="submit"] {
-                width: 40%;
-                background-color: $yellow;
-                color: $gray;
-                border: none;
-                box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
             }
         }
     }
+}
+
+footer {
+    @include size(100vw,
+    100vh);
 }
