@@ -175,7 +175,7 @@ nav ul li span {
   left: 50%;
   top: 85%;
   background-color: rgba(30, 30, 30, 0.3);
-  color: #f2a823;
+  color: #ffde59;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -206,8 +206,8 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.85))), url("../img/article1.webp");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.85)), url("../img/article1.webp");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7))), url("/img/main1.webp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7)), url("/img/main1.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -239,13 +239,167 @@ main .container h1 {
   height: auto;
   font-family: "poppins";
   font-size: calc(1.1rem + 1vw);
-  color: #f2a823;
+  color: #ffde59;
   letter-spacing: 1px;
   text-shadow: 1px 3px 15px black;
 }
 
 main .container h1 span {
   display: block;
+  margin: 5px auto;
+}
+
+.step4 {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+.step4 .container {
+  width: 70vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "poppins";
+  font-weight: 600;
+  -webkit-column-gap: 5%;
+          column-gap: 5%;
+}
+
+.step4 .container #reformas {
+  width: 50%;
+  height: auto;
+}
+
+.step4 .container #reformas p {
+  font-size: calc(.4rem + 1vw);
+  font-family: "baloo 2";
+  font-weight: 600;
+  color: #111;
+}
+
+.step4 .container #reformas p span {
+  font-size: calc(.3rem + 1vw);
+  font-weight: 500;
+  margin: 7px auto;
+}
+
+.step4 .container #instalacao {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.step4 .container #instalacao div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.step4 .container #instalacao div p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: calc(.4rem + 1vw);
+  font-family: "baloo 2";
+  font-weight: 600;
+  color: #111;
+}
+
+.step4 .container #instalacao div p span {
+  font-size: calc(.3rem + 1vw);
+  font-weight: 500;
+  margin: 7px auto;
+}
+
+.step4 .container h1 {
+  text-align: center;
+  font-weight: 500;
+  margin: 15px 0px;
+  color: #333;
+  font-size: calc(.55rem + 1vw);
+  font-weight: 600;
+  font-family: "baloo 2";
+}
+
+.step4 .container h1::before {
+  content: "";
+  position: relative;
+  background-color: #ffde59;
+  height: 3px;
+  width: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px auto;
+}
+
+.step4 .container h1::after {
+  content: "";
+  position: relative;
+  background-color: #ffde59;
+  height: 3px;
+  width: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px auto;
 }
 
 .step1 {
@@ -268,7 +422,7 @@ main .container h1 span {
 }
 
 .step1 .container {
-  width: 70vw;
+  width: 80vw;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,65 +433,78 @@ main .container h1 span {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   font-family: "poppins";
   font-weight: 600;
+  -webkit-column-gap: 3%;
+          column-gap: 3%;
 }
 
-.step1 .container h1 {
-  text-align: center;
-  font-weight: 500;
-  margin: 15px 0px;
-  color: #333;
-  font-size: 1.7rem;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-
-.step1 .container h1::before {
-  content: "";
-  position: relative;
-  background-color: #333;
-  height: 3px;
-  width: 160px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0px auto;
-}
-
-.step1 .container h1::after {
-  content: "";
-  position: relative;
-  background-color: #333;
-  height: 3px;
-  width: 160px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0px auto;
-}
-
-.step1 .container p {
+.step1 .container div {
+  width: 100%;
+  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.step1 .container div h1 {
   text-align: center;
-  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 15px 0px;
   color: #333;
+  font-size: calc(.65rem + 1vw);
+  font-weight: 600;
+  font-family: "baloo 2";
+}
+
+.step1 .container div h1::before {
+  content: "";
+  position: relative;
+  background-color: #ffde59;
+  height: 3px;
+  width: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px auto;
+}
+
+.step1 .container div h1::after {
+  content: "";
+  position: relative;
+  background-color: #ffde59;
+  height: 3px;
+  width: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px auto;
+}
+
+.step1 .container div p {
+  font-size: calc(.55rem + 1vw);
+  font-family: "baloo 2";
+  font-weight: 600;
+  color: #111;
+}
+
+.step1 .container div p span {
+  font-size: calc(.55rem + 1vw);
+  font-weight: 500;
 }
 
 .step2 {
@@ -356,8 +523,8 @@ main .container h1 span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9))), url("/img/main2.webp");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url("/img/main2.webp");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9))), url("/img/article1.webp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url("/img/article1.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -405,13 +572,13 @@ main .container h1 span {
   width: 90%;
   height: auto;
   font-size: calc(1.1em + 1vw);
-  color: #f2a823;
+  color: #ffde59;
 }
 
 .step2 .container div h1 span {
   width: auto;
   height: auto;
-  border-bottom: 1px solid #f2a823;
+  border-bottom: 1px solid #ffde59;
 }
 
 .step2 .container div ul {
@@ -419,7 +586,7 @@ main .container h1 span {
   height: auto;
   list-style: none;
   font-size: calc(0.7em + 1vw);
-  color: #f2a823;
+  color: #ffde59;
   margin-top: 10px;
 }
 
@@ -480,7 +647,7 @@ main .container h1 span {
 }
 
 .step3 .container div p {
-  font-size: calc(0.5em + 1vw);
+  font-size: calc(0.55em + 1vw);
 }
 
 .step3 .container div p a {
@@ -712,7 +879,7 @@ main .container h1 span {
 
 .step3 .container div .form input[type="submit"] {
   width: 100%;
-  background-color: #00ffa1;
+  background-color: #aaa;
   color: #000;
   border: none;
   -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);

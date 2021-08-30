@@ -17,8 +17,8 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-// $yellow: #ffde59;
-$yellow: #f2a823;
+$yellow: #ffde59;
+// $yellow: #f2a823;
 $blue: #00cdff;
 $green: #00ffa1;
 $red: #ff002f;
@@ -131,7 +131,7 @@ nav {
 main {
     @include size(100vw, 100vh);
     @include display-flex(row, center, center);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.85)), url("../img/article1.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7)), url("/img/main1.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -154,12 +154,13 @@ main {
             text-shadow: 1px 3px 15px rgba(0, 0, 0, 1);
             span {
                 display: block;
+                margin: 5px auto;
             }
         }
     }
 }
 
-.step1 {
+.step4 {
     @include size(100vw,
     100vh);
     @include display-flex(row,
@@ -174,19 +175,61 @@ main {
         center);
         font-family: "poppins";
         font-weight: 600;
+        column-gap: 5%;
+        #reformas {
+            @include size(50%,
+            auto);
+            p {
+                font-size: calc(.4rem + 1vw);
+                font-family: "baloo 2";
+                font-weight: 600;
+                color: #111;
+                span {
+                    font-size: calc(.3rem + 1vw);
+                    font-weight: 500;
+                    margin: 7px auto;
+                }
+            }
+        }
+        #instalacao {
+            @include size(100%,
+            auto);
+            @include display-flex(column,
+            center,
+            center);
+            div {
+                @include display-flex(row,
+                center,
+                center);
+                p {
+                    @include display-flex(column,
+                    center,
+                    center);
+                    font-size: calc(.4rem + 1vw);
+                    font-family: "baloo 2";
+                    font-weight: 600;
+                    color: #111;
+                    span {
+                        font-size: calc(.3rem + 1vw);
+                        font-weight: 500;
+                        margin: 7px auto;
+                    }
+                }
+            }
+        }
         h1 {
             text-align: center;
             font-weight: 500;
             margin: 15px 0px;
             color: #333;
-            font-size: 1.7rem;
-            letter-spacing: 1px;
+            font-size: calc(.55rem + 1vw);
             font-weight: 600;
+            font-family: "baloo 2";
         }
         h1::before {
             content: "";
             position: relative;
-            background-color: #333;
+            background-color: $yellow;
             height: 3px;
             width: 160px;
             display: flex;
@@ -195,19 +238,74 @@ main {
         h1::after {
             content: "";
             position: relative;
-            background-color: #333;
+            background-color: $yellow;
             height: 3px;
             width: 160px;
             display: flex;
             margin: 0px auto;
         }
-        p {
+    }
+}
+
+.step1 {
+    @include size(100vw,
+    100vh);
+    @include display-flex(row,
+    center,
+    center);
+    position: relative;
+    .container {
+        @include size(80vw,
+        100vh);
+        @include display-flex(row,
+        center,
+        center);
+        font-family: "poppins";
+        font-weight: 600;
+        column-gap: 3%;
+        div {
+            @include size(100%,
+            300px);
             @include display-flex(column,
-            center,
+            baseline,
             center);
-            text-align: center;
-            font-size: 1.7rem;
-            color: #333;
+            h1 {
+                text-align: center;
+                font-weight: 500;
+                margin: 15px 0px;
+                color: #333;
+                font-size: calc(.65rem + 1vw);
+                font-weight: 600;
+                font-family: "baloo 2";
+            }
+            h1::before {
+                content: "";
+                position: relative;
+                background-color: $yellow;
+                height: 3px;
+                width: 160px;
+                display: flex;
+                margin: 0px auto;
+            }
+            h1::after {
+                content: "";
+                position: relative;
+                background-color: $yellow;
+                height: 3px;
+                width: 160px;
+                display: flex;
+                margin: 0px auto;
+            }
+            p {
+                font-size: calc(.55rem + 1vw);
+                font-family: "baloo 2";
+                font-weight: 600;
+                color: #111;
+                span {
+                    font-size: calc(.55rem + 1vw);
+                    font-weight: 500;
+                }
+            }
         }
     }
 }
@@ -218,7 +316,7 @@ main {
     @include display-flex(column,
     center,
     center);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url("/img/main2.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url("/img/article1.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -289,7 +387,7 @@ main {
                 font-weight: 600;
             }
             p {
-                font-size: calc(0.5em + 1vw);
+                font-size: calc(0.55em + 1vw);
                 a {
                     color: #000;
                 }
@@ -417,7 +515,7 @@ main {
                 }
                 input[type="submit"] {
                     width: 100%;
-                    background-color: $green;
+                    background-color: #aaa;
                     color: #000;
                     border: none;
                     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);

@@ -78,12 +78,90 @@ window.setTimeout(function() {
         // Muda a cor do logo...
         if (step3.y < 1) {
             const img = document.querySelector('figure').children[0];
-            img.src = "/img//logo2.2.png";
+            img.src = "/img//logo2.2.webp";
             img.style.transition = '.9s';
         } else {
             const img = document.querySelector('figure').children[0];
-            img.src = "/img//logo2.1.png";
+            img.src = "/img//logo2.1.webp";
         }
+
+        if (main.y < -10) {
+            const img = document.querySelector('figure').children[0]
+            img.style.transform = 'translateY(-15px)'
+            img.style.transition = '.5s'
+        } else if (main.y > -10) {
+            const img = document.querySelector('figure').children[0]
+            img.style.transform = 'translateY(0px)'
+            img.style.transition = '.5s'
+        }
+
+        // Esconder no scroll...
+        const mainSpan = document.querySelector('main');
+        const mainSpan1 = mainSpan.children[0].children[0].children[0];
+        const mainSpan2 = mainSpan.children[0].children[0].children[1];
+        const mainSpan3 = mainSpan.children[0].children[0].children[2];
+        const mainSpan4 = mainSpan.children[0].children[0].children[3];
+
+        if (main.y < -145) {
+            mainSpan1.style.opacity = '0'
+            mainSpan1.style.transition = '.3s'
+        } else {
+            mainSpan1.style.opacity = '1'
+            mainSpan1.style.transition = '.5s'
+        }
+
+        if (main.y < -225) {
+            mainSpan2.style.opacity = '0'
+            mainSpan2.style.transition = '.3s'
+        } else {
+            mainSpan2.style.opacity = '1'
+            mainSpan2.style.transition = '.5s'
+        }
+
+        if (main.y < -275) {
+            mainSpan3.style.opacity = '0'
+            mainSpan3.style.transition = '.3s'
+        } else {
+            mainSpan3.style.opacity = '1'
+            mainSpan3.style.transition = '.5s'
+        }
+
+        if (main.y < -325) {
+            mainSpan4.style.opacity = '0'
+            mainSpan4.style.transition = '.3s'
+        } else {
+            mainSpan4.style.opacity = '1'
+            mainSpan4.style.transition = '.5s'
+        }
+
+        // Esconder no scroll step1...
+        const step1Div = document.querySelector('.step1');
+        const step1Div1 = step1Div.children[0].children[0];
+        const step1Div2 = step1Div.children[0].children[1];
+        const step1Div3 = step1Div.children[0].children[2];
+
+        step1Div1.style.opacity = '0'
+        step1Div1.style.transition = '.5s'
+        step1Div2.style.opacity = '0'
+        step1Div2.style.transition = '.5s'
+        step1Div3.style.opacity = '0'
+        step1Div3.style.transition = '.5s'
+
+        if (step1.y < 475) {
+            step1Div1.style.opacity = '1'
+            step1Div1.style.transition = '1s'
+            step1Div2.style.opacity = '1'
+            step1Div2.style.transition = '1s'
+            step1Div3.style.opacity = '1'
+            step1Div3.style.transition = '1s'
+        }
+
+        // console.log(step1.y)
+        // console.log(step1Div1)
+        // console.log(step1Div2)
+        // console.log(step1Div3)
+        // console.log(mainSpan4)
+
     })
 
     span1.addEventListener("click", function(event) {
@@ -106,6 +184,7 @@ window.setTimeout(function() {
         event.preventDefault
         window.scroll(0, footer.y, 'smooth', behavior = 'smooth')
     })
+
 
 
 }, 1000);
