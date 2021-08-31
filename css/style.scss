@@ -77,6 +77,8 @@ header {
                 @include size(110px, 100px);
                 position: absolute;
                 top: 0px;
+                left: 150px;
+                transition: all .3s;
             }
         }
     }

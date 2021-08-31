@@ -85,6 +85,7 @@ window.setTimeout(function() {
             img.src = "/img//logo2.1.webp";
         }
 
+        // Recolher imagem
         if (main.y < -10) {
             const img = document.querySelector('figure').children[0]
             img.style.transform = 'translateY(-15px)'
@@ -94,6 +95,29 @@ window.setTimeout(function() {
             img.style.transform = 'translateY(0px)'
             img.style.transition = '.5s'
         }
+
+        // Desvio do logo...
+        // if (step1.y < -40) {
+        //     const img = document.querySelector('figure').children[0]
+        //     img.style.left = '-20px'
+        // } else {
+        //     const img = document.querySelector('figure').children[0]
+        //     img.style.left = ''
+        // }
+
+        // if (step1.y < -80) {
+        //     const img = document.querySelector('figure').children[0]
+        //     img.style.transform = 'rotateZ(-70deg)'
+        // } else {
+        //     const img = document.querySelector('figure').children[0]
+        //     img.style.transform = 'rotateZ(0deg)'
+        // }
+
+        // if (step2.y < 1) {
+        //     const img = document.querySelector('figure').children[0]
+        //     img.style.transform = 'rotateZ(0deg)'
+        //     img.style.left = ''
+        // }
 
         // Esconder no scroll...
         const mainSpan = document.querySelector('main');

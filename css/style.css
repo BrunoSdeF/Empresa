@@ -97,6 +97,9 @@ header .container figure img {
   height: 100px;
   position: absolute;
   top: 0px;
+  left: 150px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 nav {
