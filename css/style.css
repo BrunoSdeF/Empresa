@@ -98,8 +98,8 @@ header .container figure img {
   position: absolute;
   top: 0px;
   left: 150px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 nav {
@@ -422,6 +422,7 @@ main .container h1 span {
       -ms-flex-direction: row;
           flex-direction: row;
   position: relative;
+  background-color: #eee;
 }
 
 .step1 .container {
