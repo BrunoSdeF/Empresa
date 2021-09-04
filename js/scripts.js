@@ -55,6 +55,10 @@ window.setTimeout(function() {
         event.preventDefault
         window.scroll(0, step2.y, 'smooth', behavior = 'smooth')
     })
+    const contato = document.querySelector('header').children[0].children[1]
+    contato.addEventListener('click', function() {
+        window.scroll(0, step3.y, 'smooth', behavior = 'smooth')
+    })
     span4.addEventListener("click", function(event) {
         event.preventDefault
         window.scroll(0, step3.y, 'smooth', behavior = 'smooth')
@@ -105,44 +109,18 @@ window.setTimeout(function() {
             span5.style.background = '';
         }
 
-        // Muda a cor do logo...
-        var img = document.querySelector('figure').children[0];
-        if (step3.y < 1) {
-            img.src = "/img//logo2.2.webp";
-        } else {
-            img.src = "/img//logo2.1.webp";
-        }
-
         // Recolher imagem
+        var img = document.querySelector('figure').children[0];
+
         if (main.y < -10) {
             img.style.transform = 'translateY(-15px)'
         } else if (main.y > -10) {
             img.style.transform = 'translateY(0px)'
         }
 
-        // Desvio do logo...
-        // if (step1.y < -40) {
-        //     const img = document.querySelector('figure').children[0]
-        //     img.style.left = '-20px'
-        // } else {
-        //     const img = document.querySelector('figure').children[0]
-        //     img.style.left = ''
-        // }
-
-        // if (step1.y < -80) {
-        //     const img = document.querySelector('figure').children[0]
-        //     img.style.transform = 'rotateZ(-70deg)'
-        // } else {
-        //     const img = document.querySelector('figure').children[0]
-        //     img.style.transform = 'rotateZ(0deg)'
-        // }
-
-        // if (step2.y < 1) {
-        //     const img = document.querySelector('figure').children[0]
-        //     img.style.transform = 'rotateZ(0deg)'
-        //     img.style.left = ''
-        // }
-
+        img.addEventListener("click", function() {
+            window.scroll(0, 0, 'smooth', behavior = 'smooth')
+        })
 
         // Esconder no scroll...
 
