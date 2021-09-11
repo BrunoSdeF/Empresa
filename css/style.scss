@@ -68,6 +68,14 @@ $border) {
     border: $border;
 }
 
+@mixin font ($family,
+$size,
+$weight) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+}
+
 header {
     @include size(100vw,
     100px);
@@ -77,7 +85,7 @@ header {
     position: fixed;
     z-index: 1000;
     .container {
-        @include size(70vw,
+        @include size(90vw,
         100%);
         @include display-flex(row,
         space-between,
@@ -94,15 +102,18 @@ header {
         }
         p {
             @include size(150px,
-            100px);
+            auto);
             @include display-flex(row,
             center,
             center);
             font-family: 'Poppins', sans-serif;
-            font-size: calc(0.5rem + 1vw);
+            font-size: 1.1rem;
             font-weight: 600;
-            // color: $yellow;
-            cursor: pointer;
+            color: $yellow;
+            span {
+                border-bottom: 1px solid #fcd64199;
+                cursor: pointer;
+            }
         }
     }
 }
@@ -148,7 +159,7 @@ nav {
     center);
     display: flex;
     position: absolute;
-    left: 50%;
+    left: 47, 5%;
     top: 85%;
     @include color(rgba(30, 30, 30, 0.3),
     $yellow,
@@ -211,32 +222,30 @@ main {
     center);
     position: relative;
     background-color: #eee;
+    overflow: hidden;
     .container {
         @include size(80vw,
         auto);
         min-height: 100vh;
-        @include display-flex(row,
+        @include display-flex(column,
         center,
         center);
-        flex-wrap: wrap;
-        font-family: "poppins";
-        font-weight: 600;
-        column-gap: 3%;
-        div {
-            @include size(auto,
-            300px);
-            max-width: 300px;
+        padding: 50px 0px 150px 0px;
+        #reformas {
+            @include size(75%,
+            auto);
+            min-width: 400px;
             @include display-flex(column,
             baseline,
             center);
+            margin-bottom: 40px;
             h1 {
+                @include font("Poppins",
+                1.3rem,
+                500);
                 text-align: center;
-                font-weight: 500;
                 margin: 15px 0px;
                 color: #333;
-                font-size: calc(0.65rem + 1vw);
-                font-weight: 600;
-                font-family: "baloo 2";
             }
             h1::before {
                 content: "";
@@ -257,14 +266,73 @@ main {
                 margin: 0px auto;
             }
             p {
-                font-size: calc(0.55rem + 1vw);
-                font-family: "baloo 2";
-                font-weight: 600;
+                @include font("Poppins",
+                null,
+                null);
                 color: #111;
+                text-align: justify;
                 span {
-                    font-size: calc(0.55rem + 1vw);
+                    font-size: 1rem;
                     font-weight: 500;
                 }
+            }
+        }
+        #instalacoes {
+            @include size(80vw,
+            auto);
+            @include display-flex(row,
+            center,
+            center);
+            column-gap: 35px;
+            flex-wrap: wrap;
+            div {
+                @include size(30%,
+                auto);
+                min-width: 400px;
+                @include display-flex(column,
+                center,
+                center);
+                h1 {
+                    @include font("Poppins",
+                    1.3rem,
+                    500);
+                    margin: 15px 0px;
+                    color: #333;
+                }
+                h1::before {
+                    content: "";
+                    position: relative;
+                    background-color: $yellow;
+                    height: 3px;
+                    width: 160px;
+                    display: flex;
+                    margin: 0px auto;
+                }
+                h1::after {
+                    content: "";
+                    position: relative;
+                    background-color: $yellow;
+                    height: 3px;
+                    width: 160px;
+                    display: flex;
+                    margin: 0px auto;
+                }
+                p {
+                    @include font("Poppins",
+                    null,
+                    null);
+                    color: #111;
+                    text-align: justify;
+                    span {
+                        font-size: 1rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+            b {
+                @include size(auto,
+                200px);
+                border-left: 1px solid rgba(0, 0, 0, 0.3);
             }
         }
     }
@@ -276,11 +344,6 @@ main {
     @include display-flex(column,
     center,
     center);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9)), url("/article5.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
     position: relative;
     .container {
         @include size(70vw,
@@ -330,8 +393,7 @@ main {
     center);
     position: relative;
     overflow: hidden;
-    background-color: #eee;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5)), url("/main3.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7)), url("/main3.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -347,6 +409,7 @@ main {
             auto);
             overflow: hidden;
             font-family: "baloo 2";
+            color: $yellow;
             h1 {
                 font-size: calc(1em + 1vw);
                 font-weight: 600;
@@ -354,7 +417,7 @@ main {
             p {
                 font-size: calc(0.55em + 1vw);
                 a {
-                    color: #000;
+                    color: $yellow;
                 }
             }
             .form {
@@ -384,10 +447,9 @@ main {
                     height: 35px;
                     margin: 5px auto;
                     outline: none;
-                    border: 1px rgba(0, 0, 0, 0.4) solid;
-                    border-radius: 3px;
+                    // border: 1px solid $yellow;
                     padding-left: 10px;
-                    background-color: rgba(0, 0, 0, 0);
+                    background-color: rgba(255, 255, 255, .7);
                     &::placeholder {
                         font-family: "baloo 2";
                         font-size: 1rem;
@@ -451,17 +513,16 @@ main {
                     }
                 }
                 textarea {
-                    width: 99%;
+                    width: 100%;
                     height: 100px;
                     margin: 15px auto 0px;
                     outline: none;
-                    border: 1px rgba(0, 0, 0, 0.4) solid;
-                    border-radius: 3px;
+                    // border: 1px solid $yellow;
                     padding-left: 10px;
                     padding-top: 5px;
                     font-size: 1rem;
                     font-family: "baloo 2";
-                    background-color: rgba(0, 0, 0, 0);
+                    background-color: rgba(255, 255, 255, .7);
                     resize: none;
                     &::placeholder {
                         font-family: "baloo 2";
@@ -480,12 +541,13 @@ main {
                 }
                 input[type="submit"] {
                     width: 100%;
-                    background-color: #aaa;
+                    background-color: rgba(255, 255, 255, .7);
                     color: #000;
-                    border: none;
+                    // border: 1px solid $yellow;
                     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
                     font-family: "baloo 2";
                     font-size: 1.2rem;
+                    cursor: pointer;
                 }
             }
         }

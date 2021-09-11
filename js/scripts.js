@@ -1,6 +1,6 @@
-window.onload = function() {
-    window.scroll(0, 0, 'smooth', behavior = 'smooth')
-};
+// window.onload = function() {
+//     window.scroll(0, 0, 'smooth', behavior = 'smooth')
+// };
 
 window.setTimeout(function() {
     // Primeia arrow (main) pula para o step1...
@@ -166,23 +166,18 @@ window.setTimeout(function() {
         const step1Div = document.querySelector('.step1');
         const step1Div1 = step1Div.children[0].children[0];
         const step1Div2 = step1Div.children[0].children[1];
-        const step1Div3 = step1Div.children[0].children[2];
 
         // Começam ocultas
         step1Div1.style.opacity = '0'
         step1Div1.style.transition = '.5s'
         step1Div2.style.opacity = '0'
         step1Div2.style.transition = '.5s'
-        step1Div3.style.opacity = '0'
-        step1Div3.style.transition = '.5s'
 
         if (step1.y < 475) {
             step1Div1.style.opacity = '1'
             step1Div1.style.transition = '1s'
             step1Div2.style.opacity = '1'
             step1Div2.style.transition = '1s'
-            step1Div3.style.opacity = '1'
-            step1Div3.style.transition = '1s'
         }
     })
 
